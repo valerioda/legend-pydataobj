@@ -88,6 +88,7 @@ def _h5_read_ndarray(
             )
             h5d.read(mspace, fspace, obj_buf.nda)
         else:
+            idx = [ii if ii<fspace.shape[0] else 0 for ii in idx]
             tmp = np.empty(fspace.shape, h5d.dtype)
             h5d.read(fspace, fspace, tmp)
             obj_buf.nda[dest_sel, ...] = tmp[idx, ...]
