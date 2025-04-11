@@ -317,8 +317,8 @@ def _h5_read_table(
         )
         h5o.close()
 
-        if obj_buf is not None and obj_buf_start + n_rows_read > len(obj_buf):
-            obj_buf.resize(obj_buf_start + n_rows_read)
+        #if obj_buf is not None and obj_buf_start + n_rows_read > len(obj_buf):
+        #    obj_buf.resize(obj_buf_start + n_rows_read)
 
         rows_read.append(n_rows_read)
 
